@@ -1,19 +1,26 @@
 module.exports = {
-  entry: ".client/index.js",
   mode: "development",
+  entry: [
+    "@babel/polyfill", // enables async-await
+    "./client/index.js"
+  ],
   output: {
     path: __dirname,
     filename: "./public/bundle.js"
   },
-  devtool: "source-maps",
+  resolve: {
+    extensions: [".js", ".jsx"]
+  },
+  devtool: "source-map",
+  watchOptions: {
+    ignored: /node_modules/
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        loader: "babel-loader"
       }
     ]
   }

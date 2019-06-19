@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build-client": "webpack",
+    "build-client-watch": "webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server",
-    "start-dev": "webpack -w & nodemon server.js"
+    "start-dev": "npm run build-client-watch & npm run start-server",
+    "start-server": "nodemon server -e html,js,scss --ignore public --ignore client"
   },
   "repository": {
     "type": "git",
@@ -19,8 +22,10 @@
   },
   "homepage": "https://github.com/MikaelaSheldt/express-material-boilerplate#readme",
   "dependencies": {
+    "@babel/polyfill": "^7.4.4",
     "express": "^4.17.0",
     "morgan": "^1.9.1",
+    "nodemon": "^1.19.1",
     "path": "^0.12.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/MikaelaSheldt/express-material-boilerplate/issues"
   },
-  "homepage": "https://github.com/MikaelaSheldt/express-material-boilerplate#readme"
+  "homepage": "https://github.com/MikaelaSheldt/express-material-boilerplate#readme",
+  "dependencies": {
+    "express": "^4.17.0",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7",
+    "volleyball": "^1.5.1"
+  }
 }
